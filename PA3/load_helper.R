@@ -12,14 +12,16 @@ check_col <- function(outcome) {
 
 load_helper <- function(state, outcome) {
     data(state)
-    if (!state %in% state.abb) {
+    if (!state %in% state.abb & !state == "all") {
         stop("invalid state")
     } 
     
     colnum <- check_col(outcome)
     outcome_care <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
     outcome_care[, colnum] <- as.numeric(outcome_care[, colnum])
-    state_outcome <- outcome_care[ outcome_care$State == state,]
+    if (!state == "all") {
+        outcome_care <- outcome_care[ outcome_care$State == state,]
+    }
     
-    return(state_outcome)
+    return(outcome_care)
 }
