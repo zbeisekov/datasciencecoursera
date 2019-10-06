@@ -18,7 +18,7 @@ load_helper <- function(state, outcome) {
     
     colnum <- check_col(outcome)
     outcome_care <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
-    outcome_care[, colnum] <- as.numeric(outcome_care[, colnum])
+    outcome_care[, colnum] <- suppressWarnings(as.numeric(outcome_care[, colnum]))
     if (!state == "all") {
         outcome_care <- outcome_care[ outcome_care$State == state,]
     }
