@@ -8,6 +8,8 @@ test_that("20th hospitals for heart attack",{
                         row.names = test_data$row.names)
     result <- rankall("heart attack", 20)
     result <- result[1:10,]
-    expect_equal(as.character(result$hospital), as.charactertest(test$hospital))
-    expect_equal(as.character(result$state), as.charactertest(test$state))
+    print(result$hospital)
+    print(test$hospital)
+    expect_equal(as.character(result$hospital), as.character(test$hospital))
+    expect_equal(as.character(result$state), as.character(test$state))
 })
