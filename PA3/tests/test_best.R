@@ -1,4 +1,5 @@
 setwd("..")
+source("best.R")
 
 test_that("Test TX and Heart attack",{
     expect_equal(best("TX", "heart attack"), "CYPRESS FAIRBANKS MEDICAL CENTER")
