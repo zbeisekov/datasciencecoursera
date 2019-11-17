@@ -1,2 +1,7 @@
 
 .DS_Store
+data/.Rhistory
+data/acs.csv
+data/baltimore.xml
+data/fss.csv
+data/ngap.xlsx
