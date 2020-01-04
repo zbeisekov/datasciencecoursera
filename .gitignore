@@ -5,3 +5,5 @@ data/acs.csv
 data/baltimore.xml
 data/fss.csv
 data/ngap.xlsx
+Exploratory/Source_Classification_Code.rds
+*.rds
